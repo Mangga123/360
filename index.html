@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Explore Rumah 360</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css" />
+    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      #panorama {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="panorama"></div>
+
+    <script>
+      pannellum.viewer("panorama", {
+        default: {
+          firstScene: "ruang_tamu",
+          sceneFadeDuration: 1000,
+        },
+
+        scenes: {
+          ruang_tamu: {
+            title: "Ruang Tamu",
+            panorama: "Ruang_tamu.jpg.jpeg",
+            hotSpots: [
+              {
+                pitch: 0,
+                yaw: 80,
+                type: "scene",
+                text: "Ke Kamar",
+                sceneId: "kamar",
+              },
+              {
+                pitch: 0,
+                yaw: 20,
+                type: "scene",
+                text: "Ke Teras",
+                sceneId: "teras",
+              },
+              {
+                pitch: 0,
+                yaw: 190,
+                type: "scene",
+                text: "Ke Dapur",
+                sceneId: "dapur",
+              },
+            ],
+          },
+
+          kamar: {
+            title: "Kamar",
+            panorama: "360photoconverter.jpg.jpeg",
+            hotSpots: [
+              {
+                pitch: 0,
+                yaw: 0,
+                type: "scene",
+                text: "Kembali ke Ruang Tamu",
+                sceneId: "ruang_tamu",
+              },
+            ],
+          },
+
+          teras: {
+            title: "Teras",
+            panorama: "PANO_20260328_142137_11.jpg.jpeg",
+            hotSpots: [
+              {
+                pitch: 0,
+                yaw: 113,
+                type: "scene",
+                text: "Masuk ke Ruang Tamu",
+                sceneId: "ruang_tamu",
+              },
+            ],
+          },
+
+          dapur: {
+            title: "Dapur",
+            panorama: "Dapur_v2.jpg.jpeg",
+            hotSpots: [
+              {
+                pitch: 0,
+                yaw: -80,
+                type: "scene",
+                text: "Kembali ke Ruang tamu",
+                sceneId: "ruang_tamu",
+              },
+            ],
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
